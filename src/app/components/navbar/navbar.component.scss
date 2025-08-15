@@ -1,0 +1,48 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  background: rgba(15, 15, 15, 0.9);
+  color: #fff;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space between image & text */
+  }
+
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* circular image */
+    object-fit: cover;
+    border: 2px solid #00fff7;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #00fff7;
+      }
+    }
+  }
+}

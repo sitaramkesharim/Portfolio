@@ -1,0 +1,88 @@
+.skills-section {
+  padding: 3rem 2rem;
+  background: #f5f5f5;
+  // background: linear-gradient(
+  //     135deg,
+  //     #0f2027,
+  //     #203a43,
+  //     #2c5364);
+  color: #8f8124;
+  text-align: center;
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+
+     h2 {
+      font-size: 3rem; /* Bigger */
+      font-weight: 800; /* Extra bold */
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #222; /* Darker for better contrast */
+      position: relative;
+
+      /* Optional underline accent */
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #00fff7;
+        margin: 0.5rem auto 0;
+        border-radius: 2px;
+      }
+    }
+
+    .skills-list {
+  display: flex !important; /* force row layout */
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+
+  .skill {
+    flex: 1 1 calc(33.33% - 1.5rem);
+max-width: calc(33.33% - 1.5rem);
+    box-sizing: border-box;
+    text-align: left;
+
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background: #ddd;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+
+      .progress {
+        height: 100%;
+        background: #046865;
+        transition: width 0.5s ease;
+      }
+    }
+  }
+}
+  }
+}
+
+.skills-row {
+  display: flex;
+  gap: 20px; /* space between icons */
+  flex-wrap: wrap; /* wraps to new line if too long */
+  justify-content: center; /* center in page */
+  padding: 20px;
+}
+
+.skills-row img {
+  width: 50px;  /* icon size */
+  height: 50px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.skills-row img:hover {
+  transform: scale(1.2); /* zoom effect on hover */
+}

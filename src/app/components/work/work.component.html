@@ -1,0 +1,43 @@
+<section id="work" class="work">
+  <div class="container" [@slideIn]>
+    <h2>WORK EXPERIENCE</h2>
+
+    <div 
+      class="work-item" 
+      *ngFor="let company of companies" 
+      (click)="openModal(company)"
+    >
+      <div class="company-image">
+        <img [src]="company.image" [alt]="company.name" />
+      </div>
+      <div class="company-info">
+        <h3>{{ company.role }}</h3>
+        <span class="duration">{{ company.duration }}</span>
+        <p>{{ company.shortDescription }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="modalOpen">
+    <div class="modal-content">
+      <span class="close-btn" (click)="closeModal()">&times;</span>
+
+      <img 
+        class="modal-company-logo" 
+        [src]="modalData.image" 
+        [alt]="modalData.name" 
+      />
+
+      <h3 class="modal-role">{{ modalData.role }}</h3>
+      <div class="modal-company-name">{{ modalData.name }}</div>
+      <div class="modal-duration">{{ modalData.duration }}</div>
+
+      <div class="modal-description">
+        <ul>
+          <li *ngFor="let point of modalData.responsibilities">{{ point }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

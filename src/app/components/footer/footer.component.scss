@@ -1,0 +1,26 @@
+.footer {
+  padding: 1rem;
+  // background: linear-gradient(135deg, #2a101e, #131a3c, #303212);
+  background: linear-gradient(45deg, black, #00000082);
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+
+  .signature {
+    margin-top: 1rem;
+
+    .tagline {
+      font-size: 0.8rem;
+      color: #aaa;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .name {
+      font-family: 'Pacifico', cursive; /* Or another handwritten font */
+      font-size: 2rem;
+      color: #00bfff; /* Light blue color */
+      margin: 0.2rem 0 0;
+    }
+  }
+}
