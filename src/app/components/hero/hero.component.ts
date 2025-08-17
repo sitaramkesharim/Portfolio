@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+// import 'particles.js';
 
 declare var particlesJS: any;
 
@@ -18,8 +19,8 @@ declare var particlesJS: any;
 })
 export class HeroComponent implements OnInit {
   ngOnInit() {
-    // particlesJS.load('particles-js', 'assets/particles.json', () => {
-    //   console.log('Particles.js loaded');
-    // });
+    particlesJS.load('particles-js', 'assets/particles.json', () => {
+      console.log('Particles.js loaded');
+    });
   }
 }

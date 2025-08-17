@@ -11,7 +11,7 @@ export class ContactComponent {
 
   // Your Google Map embed link (replace API key and coordinates as needed)
 googleMapUrl: string =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7775.757413701847!2d77.75955263750845!3d12.97960890410372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0e0c0b584d1b%3A0x2f5afa70c37d0720!2sChannasandra%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1755115222135!5m2!1sen!2sin';
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9510141661194!2d77.6843978!3d12.91087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1377591db561%3A0x77bf70ae3c020cf4!2sSarjapur%20Main%20Rd%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1755461355097!5m2!1sen!2sin';
 
   constructor(private fb: FormBuilder) {
     // Initialize the form

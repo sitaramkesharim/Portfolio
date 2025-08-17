@@ -1,21 +1,15 @@
-<section id="skills" class="skills-section">
+    <section id="skills" class="skills-section">
   <div class="container">
-    <h2>Skills</h2>
-    <!-- <div class="skills-list">
-      <div class="skill" *ngFor="let skill of skills">
-        <h3>{{ skill.name }}</h3>
-        <div class="progress-bar">
-          <div class="progress" [style.width.%]="skill.level"></div>
-        </div>
+    <h2 class="section-title">What I Do</h2>
+    <p class="section-subtitle">
+      I am a Software Developer with experience in modern web technologies, UI design, and backend integration.
+    </p>
+
+    <div class="skills-grid">
+      <div *ngFor="let skill of skills" class="skill-card" @fadeSlideUp>
+        <div class="icon" [innerHTML]="skill.svg"></div>
+        <p class="skill-name">{{ skill.name }}</p>
       </div>
-    </div> -->
-   <div class="skills-row">
-  <div *ngFor="let skill of skills" class="skill-item" [title]="skill.name">
-    <div class="icon" [innerHTML]="skill.svg"></div>
-  </div>
-</div>
-
-
-
+    </div>
   </div>
 </section>

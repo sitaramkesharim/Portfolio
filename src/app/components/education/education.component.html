@@ -1,16 +1,41 @@
-
-<section id="educations" class="educations-section">>
+<section id="educations" class="educations-section">
   <div class="container" [@fadeIn]>
     <h2>EDUCATION</h2>
-    <div class="project-cards">
-      <!-- Example project card -->
-      <div class="card" *ngFor="let project of educations">
-        <img [src]="project.image" alt="{{ project.title }}" />
-        <div class="card-content">
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
+
+    <div class="carousel">
+      <div
+        class="carousel-track"
+        [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
+      >
+        <div class="education-card" *ngFor="let edu of educations">
+          <div class="education-inner">
+            <div class="education-image">
+              <img [src]="edu.image" alt="{{ edu.title }}" />
+            </div>
+           <div class="education-content">
+  <h3>{{ edu.title }}</h3>
+  <p><strong>Course:</strong> {{ edu.course }}</p>
+  <p><strong>Marks:</strong> {{ edu.marks }}</p>
+  <p><strong>Duration:</strong> {{ edu.duration }}</p>
+  <p class="desc">{{ edu.description }}</p>
+</div>
+
+          </div>
         </div>
       </div>
+
+      <!-- Controls -->
+      <button class="carousel-btn prev" (click)="prevSlide()">&#10094;</button>
+      <button class="carousel-btn next" (click)="nextSlide()">&#10095;</button>
+    </div>
+
+    <!-- Dots navigation -->
+    <div class="carousel-dots">
+      <span
+        *ngFor="let edu of educations; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="currentIndex = i"
+      ></span>
     </div>
   </div>
 </section>

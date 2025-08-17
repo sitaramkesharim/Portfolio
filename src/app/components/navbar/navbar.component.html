@@ -1,15 +1,53 @@
 <nav class="navbar">
-  <div class="logo-container">
-    <img src="assets/profile.JPG" alt="Profile" class="profile-img" />
-    <span class="logo-text">KESHARI</span>
+  <!-- Left section: hamburger + logo -->
+  <div class="left-section">
+    <!-- Hamburger menu -->
+    <div class="hamburger" (click)="toggleDropdown($event)">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+    <!-- Profile logo -->
+    <div class="logo-container">
+      <img 
+        src="assets/profile.JPG" 
+        alt="Profile" 
+        class="profile-img"
+        (click)="openImageModal()" 
+      />
+      <span class="logo-text">KESHARI</span>
+    </div>
   </div>
+
+  <!-- Right side links -->
   <ul class="nav-links">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a (click)="scrollTo('hero')"><i class="far fa-home"></i> Home</a></li>
+    <li><a (click)="scrollTo('about')"><i class="far fa-user"></i> About</a></li>
+    <li><a (click)="scrollTo('work')"><i class="fas fa-briefcase"></i> Work</a></li>
+    <li><a (click)="scrollTo('projects')"><i class="fas fa-project-diagram"></i> Projects</a></li>
+    <li><a (click)="scrollTo('skills')"><i class="fas fa-code"></i> Skills</a></li>
+    <li><a (click)="scrollTo('education')"><i class="fas fa-graduation-cap"></i> Education</a></li>
+    <li><a (click)="scrollTo('contact')"><i class="far fa-envelope"></i> Contact</a></li>
   </ul>
+
+  <!-- Dropdown (mobile menu) -->
+  <div class="dropdown" *ngIf="isDropdownOpen" (click)="$event.stopPropagation()">
+  <a href="#hero" (click)="scrollTo('hero')"><i class="far fa-home"></i> Home</a>
+  <a href="#about" (click)="scrollTo('about')"><i class="far fa-user"></i> About</a>
+  <a href="#work" (click)="scrollTo('work')"><i class="fas fa-briefcase"></i> Work</a>
+  <a href="#projects" (click)="scrollTo('projects')"><i class="fas fa-project-diagram"></i> Projects</a>
+  <a href="#skills" (click)="scrollTo('skills')"><i class="fas fa-code"></i> Skills</a>
+  <a href="#education" (click)="scrollTo('education')"><i class="fas fa-graduation-cap"></i> Education</a>
+  <a href="#contact" (click)="scrollTo('contact')"><i class="far fa-envelope"></i> Contact</a>
+</div>
 </nav>
+
+<!-- Expanded Image Modal -->
+<div class="image-modal" *ngIf="isImageModalOpen">
+  <div class="overlay" (click)="closeImageModal()"></div>
+  <div class="modal-content">
+    <button class="close-btn" (click)="closeImageModal()">✕</button>
+    <img src="assets/profile.JPG" alt="Expanded Profile" />
+  </div>
+</div>
