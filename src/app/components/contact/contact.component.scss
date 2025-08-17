@@ -115,3 +115,17 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .contact-form,
+  .contact-map {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: unset !important;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+}

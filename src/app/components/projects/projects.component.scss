@@ -28,9 +28,8 @@
       }
     }
 
-    /* White container box */
     .projects-wrapper {
-      background: #fff;
+      background: radial-gradient(silver, transparent);
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
@@ -38,40 +37,114 @@
 
     .project-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
 
       .card {
-        background: #f7f7f7;
-        border-radius: 8px;
+        background: #fff;
+        border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        position: relative; // for github icon positioning
 
         &:hover {
-          transform: translateY(-12px) scale(1.03); /* Bigger popup */
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* Deeper shadow */
+          transform: translateY(-12px) scale(1.03);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+
+          .card-image img {
+            transform: scale(1.05);
+            border: 3px solid #f5f5f5;
+            box-shadow: 0 6px 18px rgba(0, 255, 247, 0.4);
+          }
+
+          .card-github {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+            pointer-events: auto;
+          }
         }
 
-        img {
+        .card-image {
           width: 100%;
-          height: 180px;
-          object-fit: cover;
-          // object-fit: contain;
+          height: 220px;
+          background: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            max-width: 95%;
+            max-height: 100%;
+            object-fit: contain;
+            border: 3px solid transparent; // hidden until hover
+            border-radius: 10px;
+            transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+          }
         }
 
         .card-content {
-          padding: 1rem;
-          color: #333;
+          padding: 1.2rem;
+          text-align: left;
+
           h3 {
             margin: 0.5rem 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #222;
           }
+
           p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #555;
+            line-height: 1.5;
+          }
+        }
+
+        /* GitHub button */
+        .card-github {
+          position: absolute;
+          bottom: 14px;
+          right: 14px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: none;
+          background: #24292e; // GitHub black
+          color: #ffffff;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.6rem;
+          box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+          cursor: pointer;
+
+          /* hidden by default; shows on card hover */
+          opacity: 0;
+          transform: translate(10px, 10px) scale(0.95);
+          pointer-events: none;
+          transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease;
+
+          &:hover {
+            background: #333;
+          }
+
+          &:focus-visible {
+            outline: 2px solid #00fff7;
+            outline-offset: 2px;
           }
         }
       }
     }
   }
+}
+
+.btn-sect {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  height: 100%;
+  margin-top: 7%;
 }

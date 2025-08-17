@@ -10,17 +10,24 @@
       <div class="company-image">
         <img [src]="company.image" [alt]="company.name" />
       </div>
+
       <div class="company-info">
         <h3>{{ company.role }}</h3>
         <span class="duration">{{ company.duration }}</span>
         <p>{{ company.shortDescription }}</p>
       </div>
+
+      <!-- Expand Button -->
+      <div class="expand-btn" (click)="openModal(company); $event.stopPropagation()">
+  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+</div>
+
     </div>
   </div>
 
   <!-- Modal -->
-  <div class="modal-backdrop" *ngIf="modalOpen">
-    <div class="modal-content">
+  <div class="modal-backdrop" *ngIf="modalOpen" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
       <span class="close-btn" (click)="closeModal()">&times;</span>
 
       <img 

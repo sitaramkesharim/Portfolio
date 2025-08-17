@@ -2,19 +2,28 @@
   <div class="container" [@fadeIn]>
     <h2>PROJECTS</h2>
 
-    <!-- White container for all project cards -->
     <div class="projects-wrapper">
       <div class="project-cards">
-        <!-- Example project card -->
         <div class="card" *ngFor="let project of projects">
-          <img [src]="project.image" alt="{{ project.title }}" />
+          <!-- Image -->
+          <div class="card-image">
+            <img [src]="project.image" [alt]="project.title" />
+          </div>
+
+          <!-- Text -->
           <div class="card-content">
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
           </div>
+          <div class="btn-sect">
+             <!-- GitHub Button -->
+             <button class="card-github" type="button" aria-label="View GitHub" (click)="openLink(project.link)">
+  <i class="fab fa-github"></i>
+</button>
+
+           </div>
         </div>
       </div>
     </div>
-
   </div>
 </section>

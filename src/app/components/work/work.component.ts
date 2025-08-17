@@ -55,12 +55,14 @@ export class WorkComponent {
   modalData: any = null;
 
   openModal(company: any) {
-    this.modalData = company;
-    this.modalOpen = true;
-  }
+  this.modalData = company;
+  this.modalOpen = true;
+  document.body.classList.add('modal-open');
+}
 
-  closeModal() {
-    this.modalOpen = false;
-    this.modalData = null;
-  }
+closeModal() {
+  this.modalOpen = false;
+  this.modalData = null;
+  document.body.classList.remove('modal-open');
+}
 }
