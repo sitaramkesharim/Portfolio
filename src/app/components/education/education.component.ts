@@ -34,7 +34,7 @@ currentIndex = 0;
     marks: '8.5 CGPA',
     duration: '2016 – 2020',
     description: 'Learned core subjects such as Data Structures, Algorithms, DBMS, OS, and Web Development.',
-    image: 'assets/Siksha_‘O’_Anusandhan.png',
+    image: 'assets/SOA.png',
   },
   {
     title: 'Higher Secondary / 12th Grade',
