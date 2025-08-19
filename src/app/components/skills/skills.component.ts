@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { siAngular, siReact, siJavascript, siTypescript, siHtml5,siCss,  siGit, siGithub, siDocker, siBootstrap, siExpress, siFigma, siFirebase, siGitlab, siGooglecloud, siJenkins, siKubernetes, siMongodb, siMysql, siNetlify, siNodedotjs, siNpm, siPostgresql, siPostman, siRedis, siSass, siTailwindcss, siVercel, siYarn } from 'simple-icons/icons';
+import { siAngular, siReact, siJavascript, siTypescript, siHtml5,siCss,  siGit, siGithub, siDocker, siBootstrap, siExpress, siFigma, siFirebase, siGitlab, siGooglecloud, siJenkins, siKubernetes, siMongodb, siMysql, siNetlify, siNodedotjs, siNpm, siPostgresql, siPostman, siRedis, siSass, siTailwindcss, siVercel, siYarn } from 'simple-icons';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 interface Skill {
